@@ -1,4 +1,4 @@
-## For more explanation of the exploit, check out this blog -> https://medium.com/@corruptedprotocol/elf-x86-format-string-bug-basic-2-rootme-app-system-changing-values-using-format-string-99331a72d28
+## For more explanation about the exploit, check out the blog -> https://medium.com/@corruptedprotocol/elf-x86-format-string-bug-basic-2-rootme-app-system-changing-values-using-format-string-99331a72d28
 
 from pwnlib.fmtstr import *
 
