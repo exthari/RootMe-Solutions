@@ -1,0 +1,9 @@
+When we put some sql injection like
+user' or 1=1 -- and any password this gives some page of user1. 
+
+So i tried admin' and some password and we get the admin password using inspect element.
+
+Payload 
+
+Username = admin'
+Password = //anything//
