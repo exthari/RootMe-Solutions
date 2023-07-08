@@ -1,3 +1,5 @@
+## For more explanation about the exploit, check out the blog -> https://medium.com/@corruptedprotocol/elf-x64-stack-buffer-overflow-pie-rootme-app-system-842bab495fb6
+
 from pwn import *
 context.bits = 64
 
