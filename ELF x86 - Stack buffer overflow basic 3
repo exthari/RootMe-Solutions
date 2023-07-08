@@ -1,0 +1,9 @@
+1) After reading the code , We can get a clear idea on how buffer gets its value and also see how we can control the buffer by its index with the variable "count" .
+2 ) 0x08 decreases the count value , other character increases the count value ( From the switch case ).
+3) First we need to understand how stack pointer works , A drew a picture for your reference . The value of stack goes downward to lower address though the value of "buffer" increase.
+4) The variable declared are in the order buffer , check , i , count . This means that check is on top of buffer .
+5) Thus we need to go backwards by 4 to get to the "check" variable ( Remember as we add on something , it goes downward . )
+6) 4*\x08 is going to decrease the value of "count" by 4 . This will make it buffer[-4].
+7) Now the "check" variable is supposed to be "0xbffffabc" according to the code
+7) Using the payload (python -c ’print "\x08"*4 + "\xbc\xfa\xff\xbf"’ ; cat) | ./ch16
+8) Then cat .passwd to get the flag
