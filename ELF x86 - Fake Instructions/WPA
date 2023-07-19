@@ -1,0 +1,35 @@
+# This contains line by line explanation of the ASM Code. (Reference : ChatGPT)
+
+0x080486c4 <+0>:	push   ebp                     ; Push the value of ebp onto the stack.
+0x080486c5 <+1>:	mov    ebp,esp                 ; Move the value of esp into ebp (set up the base pointer).
+0x080486c7 <+3>:	sub    esp,0x8                 ; Allocate 8 bytes on the stack.
+0x080486ca <+6>:	mov    eax,DWORD PTR [ebp+0xc]  ; Move the value at [ebp+0xc] (first function argument) into eax.
+0x080486cd <+9>:	add    eax,0xb                 ; Add 0xb to the value in eax.
+0x080486d0 <+12>:	mov    BYTE PTR [eax],0xd      ; Move the value 0xd (carriage return) into the byte at the address pointed by eax.
+0x080486d3 <+15>:	mov    eax,DWORD PTR [ebp+0xc]  ; Move the value at [ebp+0xc] (first function argument) into eax.
+0x080486d6 <+18>:	add    eax,0xc                 ; Add 0xc to the value in eax.
+0x080486d9 <+21>:	mov    BYTE PTR [eax],0xa      ; Move the value 0xa (line feed) into the byte at the address pointed by eax.
+
+0x080486dc <+24>:	mov    DWORD PTR [esp],0x804893c  ; Move the address 0x804893c into the stack.
+0x080486e3 <+31>:	call   0x804846c <puts@plt>       ; Call the puts function to print the string at address 0x804893c.
+
+0x080486e8 <+36>:	mov    eax,DWORD PTR [ebp+0xc]  ; Move the value at [ebp+0xc] (first function argument) into eax.
+0x080486eb <+39>:	mov    DWORD PTR [esp+0x4],eax  ; Move the value of eax into the stack at offset 4.
+0x080486ef <+43>:	mov    eax,DWORD PTR [ebp+0x8]  ; Move the value at [ebp+0x8] (second function argument) into eax.
+0x080486f2 <+46>:	mov    DWORD PTR [esp],eax      ; Move the value of eax into the stack.
+0x080486f5 <+49>:	call   0x804847c <strcmp@plt>   ; Call the strcmp function to compare the two strings.
+
+0x080486fa <+54>:	test   eax,eax                 ; Test the result of the comparison (zero flag set if strings are equal).
+0x080486fc <+56>:	jne    0x804870f <WPA+75>      ; Jump to the address 0x804870f (<WPA+75>) if the result is not equal (strings are different).
+0x080486fe <+58>:	call   0x804872c <blowfish>    ; Call the blowfish function if the strings are equal.
+
+0x08048703 <+63>:	mov    DWORD PTR [esp],0x0      ; Move the value 0 into the stack.
+0x0804870a <+70>:	call   0x804848c <exit@plt>    ; Call the exit function to terminate the program.
+
+0x0804870f <+75>:	call   0x8048803 <RS4>         ; Call the RS4 function if the strings are not equal.
+
+0x08048714 <+80>:	mov    DWORD PTR [esp],0x8048964  ; Move the address 0x8048964 into the stack.
+0x0804871b <+87>:	call   0x804846c <puts@plt>       ; Call the puts function to print the string at address 0x8048964.
+
+0x08048720 <+92>:	mov    DWORD PTR [esp],0x1      ; Move the value 0x1 into the stack.
+0x08048727 <+99>:	call   0x804848c <exit@plt>    ; Call the exit function to terminate the program.
