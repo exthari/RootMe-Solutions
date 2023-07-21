@@ -1,0 +1,27 @@
+>> Type this in the terminal. "dig @challenge01.root-me.org -p 54011 ch11.challenge01.root-me.org txt"
+
+;; communications error to 2001:bc8:35b0:c166::151#54011: connection refused
+;; communications error to 2001:bc8:35b0:c166::151#54011: connection refused
+;; communications error to 2001:bc8:35b0:c166::151#54011: connection refused
+
+; <<>> DiG 9.18.12-1-Debian <<>> @challenge01.root-me.org -p 54011 ch11.challenge01.root-me.org txt
+; (2 servers found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 27564
+;; flags: qr aa rd; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+;; WARNING: recursion requested but not available
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+; COOKIE: 09734594a9fd019a0100000064baaffbbdfe524a9e399b4c (good)
+;; QUESTION SECTION:
+;ch11.challenge01.root-me.org.	IN	TXT
+
+;; ANSWER SECTION:
+ch11.challenge01.root-me.org. 604800 IN	TXT	"DNS transfer secret key : *****************"
+
+;; Query time: 136 msec
+;; SERVER: 212.129.38.224#54011(challenge01.root-me.org) (UDP)
+;; WHEN: Fri Jul 21 21:49:07 IST 2023
+;; MSG SIZE  rcvd: 139
